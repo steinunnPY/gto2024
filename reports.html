@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Planet Youth Guanajuato Informes 2023-2024</title>
+</head>
+<body>
+<header class="top-banner" style="background: linear-gradient(to bottom, #218abd 0%, #95cee8 100%); padding: 20px; position: fixed; top: 0; width: 100%; z-index: 1200;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div class="menu-toggle" id="menu-toggle" style="font-size: 30px; color: white; cursor: pointer;">☰</div>
+        <h1 class="website-title" style="margin: 0; color: white;">Planet Youth Guanajuato Informes 2023-2024</h1>
+        <img src="logo_hvitt.png" alt="Logo" class="logo" style="width: 100px; height: auto;">
+    </div>
+</header>
+
+<div style="margin-top: 100px;">
+    <div id="nav-placeholder" style="z-index: 1500; position: relative;"></div>
+
+    <div class="content" style="padding: 20px; max-width: 1000px; margin: 0 auto;">
+        <h1>Resultados de Guanajuato 2023-2024</h1>
+
+        <!-- Embed the PowerPoint Presentation -->
+        <iframe src="https://planetyouthehf-my.sharepoint.com/personal/steinunn_planetyouth_org/_layouts/15/Doc.aspx?sourcedoc={2ff65fd8-39db-4ef8-a68f-85f978d83eca}&amp;action=embedview&amp;wdAr=1.7777777777777777"
+                width="100%" height="600px" frameborder="0" allowfullscreen="true">
+            This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
+        </iframe>
+    </div>
+</div>
+
+<script>
+    // Load the navigation menu from nav.html
+    fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+
+            // Add event listener for toggle button after loading navigation
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideNav = document.getElementById('side-nav');
+
+            if (menuToggle && sideNav) {
+                menuToggle.addEventListener('click', () => {
+                    sideNav.classList.toggle('visible');
+                });
+            }
+
+            // Highlight the active link after loading navigation
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.pathname === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error loading navigation:', error);
+        });
+
+    // Close side navigation when clicking outside of it
+    document.addEventListener('click', (event) => {
+        const sideNav = document.getElementById('side-nav');
+        const menuToggle = document.getElementById('menu-toggle');
+
+        if (sideNav && sideNav.classList.contains('visible')) {
+            if (!sideNav.contains(event.target) && event.target !== menuToggle) {
+                sideNav.classList.remove('visible');
+            }
+        }
+    });
+</script>
+
+
+<div id="footer-placeholder"></div>
+
+<script>
+    // Load the footer from footer.html
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading footer:', error);
+        });
+</script>
+
+
+</body>
+</html>
