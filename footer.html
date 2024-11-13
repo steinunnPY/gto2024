@@ -1,10 +1,10 @@
 <footer style="background-color: #031d44; color: white; padding: 40px 20px; box-sizing: border-box;">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 1600px; margin: 0 auto; align-items: start;">
         <!-- Group 1: Planet Youth Global -->
-        <div style="text-align: center;">
-            <img src="logo_hvitt.png" alt="Planet Youth Logo" style="width: 100px; height: auto;">
-            <p style="font-size: 20px; font-weight: bold;">Planet Youth Global</p>
-            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+        <div style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%;">
+            <img src="logo_hvitt.png" alt="Planet Youth Logo" style="width: 15vw; max-width: 120px; height: auto; margin-bottom: auto;">
+            <p class="planet-youth-title" style="font-size: 16px; font-weight: bold;">Planet Youth Global</p>
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: auto;">
                 <a href="https://www.facebook.com/PlanetYouthOfficial" target="_blank">
                     <img src="icons/facebook_white_icon.png" alt="Facebook" style="width: 24px; height: 24px;">
                 </a>
@@ -21,9 +21,9 @@
         </div>
 
         <!-- Group 2: Planet Youth Guanajuato -->
-        <div style="text-align: center;">
-            <img src="gto_logo_white.png" alt="Planet Youth Guanajuato Logo" style="width: 140px; height: auto; max-height: 180px;"> <!-- Adjust max-height as needed -->
-            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 0px;">
+        <div style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%;">
+            <img src="gto_logo_white.png" alt="Planet Youth Guanajuato Logo" style="width: 20vw; max-width: 160px; height: auto; max-height: 180px; margin-bottom: auto;"> <!-- Adjust max-height as needed -->
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: auto;">
                 <a href="https://www.facebook.com/PlanetYouthGTO" target="_blank">
                     <img src="icons/facebook_white_icon.png" alt="Facebook Guanajuato" style="width: 24px; height: 24px;">
                 </a>
@@ -41,3 +41,11 @@
     </div>
     <p style="text-align: center; color: white; margin-top: 20px;">&copy; 2024 Planet Youth. Todos los derechos reservados.</p>
 </footer>
+
+<style>
+    @media (max-width: 768px) {
+        .planet-youth-title {
+            font-size: 12px;
+        }
+    }
+</style>
