@@ -14,7 +14,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        .top-banner h1 {
+            font-size: 40px;
+        }
         .content {
             padding: 80px 80px;
             max-width: 1400px;
@@ -57,6 +59,28 @@
             max-width: 90%;
             max-height: 90%;
         }
+
+            .logo {
+        width: 120px; /* Default size */
+        height: auto;
+        margin-right: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .logo {
+            width: 100px; /* Adjusted size for medium screens */
+        }
+
+         .top-banner h1 {
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo {
+            width: 80px; /* Adjusted size for smaller screens */
+        }
+    }
     </style>
     <title>Infographics</title>
 </head>
@@ -65,7 +89,7 @@
     <div style="display: flex; align-items: center; justify-content: space-between;">
         <div class="menu-toggle" id="menu-toggle" style="font-size: 30px; color: white; cursor: pointer;">☰</div>
         <h1 class="website-title" style="margin: 0; color: white;">Infografías</h1>
-        <img src="logo_hvitt.png" alt="Logo" class="logo" style="width: 150px; height: auto; margin-right: 20px;">
+        <img src="images/logo_hvitt.png" alt="Logo" class="logo" style="width: 150px; height: auto; margin-right: 20px;">
     </div>
 </header>
 <div style="margin-top: 100px;">
