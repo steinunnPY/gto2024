@@ -33,13 +33,23 @@
         }
 
         @media (max-width: 768px) {
-    .content h2 {
-        margin-top: 20px; /* Adjust the top margin for smaller screens */
-    }
-}
+            .content h2 {
+                margin-top: 20px; /* Adjust the top margin for smaller screens */
+            }
+
+            #summary-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #explore-infographics-reports div {
+                flex-basis: 100%;
+                text-align: center;
+            }
+        }
 
     </style>
-    <title>Planet Youth Guanajuato Home</title>
+    <title>Planet Youth en Guanajuato</title>
 </head>
 
 <body>
@@ -56,14 +66,7 @@
 
     <h2 style="text-align: left; margin-top: 40px;">Encuesta Juventud y Bienestar 2023-2024 en números</h2>
     <section id="summary-cards" style="display: flex; justify-content: space-between; gap: 20px; margin-top: 10px; margin-bottom: 40px">
-<style>
-    @media (max-width: 768px) {
-        #summary-cards {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-</style>
+
 
         <div class="card" style="flex: 1; background-color: #218abd; color: white; padding: 20px; border-radius: 10px; text-align: center;">
             <p style="font-size: 50px; font-weight: bold; ">46</p>
@@ -83,14 +86,7 @@
 
     <section id="infographic-buttons" style="margin-top: 40px; text-align: center; background-color: #f0f0f0; padding: 20px 0; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin-top: 10px;">
-<style>
-    @media (max-width: 768px) {
-        #explore-infographics-reports div {
-            flex-basis: 100%;
-            text-align: center;
-        }
-    }
-</style>
+
             <div style="cursor: pointer;">
                 <h3>Explorar infografías</h3>
                 <a href="infographics.html">
@@ -109,7 +105,7 @@
     </section>
 </div>
 
-<div class="content" style="padding: 30px 20px; max-width: 1200px; margin: 0 auto; margin-bottom: 40px">
+<div class="content" style="padding: 40px 20px; max-width: 1200px; margin: 0 auto; margin-bottom: 40px">
         <h2>Acerca de Planet Youth</h2>
         <p>Planet Youth se dedica a mejorar el bienestar de los jóvenes y a reducir el consumo de sustancias entre la juventud a nivel mundial. Nuestro enfoque incluye la participación comunitaria, estrategias basadas en datos y la colaboración con partes interesadas locales.</p>
         <a href="about.html" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #218abd; color: white; text-decoration: none; border-radius: 5px;">Aprende más</a>
