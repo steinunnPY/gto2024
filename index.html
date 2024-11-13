@@ -27,10 +27,17 @@
         .banner-image {
             width: 100%;
             height: auto;
-            max-height: 500px; /* Set a max height to avoid the banner becoming too large */
+            max-height: 600px; /* Set a max height to avoid the banner becoming too large */
             object-fit: cover; /* Ensure the entire banner is visible and fits the space */
             margin-bottom: 20px;
         }
+
+        @media (max-width: 768px) {
+    .content h2 {
+        margin-top: 20px; /* Adjust the top margin for smaller screens */
+    }
+}
+
     </style>
     <title>Planet Youth Guanajuato Home</title>
 </head>
@@ -43,8 +50,8 @@
     <div class="menu-toggle" id="menu-toggle" style="position: absolute; top: 20px; left: 20px; font-size: 30px; color: white; cursor: pointer; background: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px;">☰</div>
 </div>
 
-<div class="content" style="padding: 30px 20px; max-width: 1000px; margin: 0 auto;">
-    <h1>Bienvenidos a Planet Youth Guanajuato</h1>
+<div class="content" style="padding: 30px 20px; max-width: 1200px; margin: 0 auto;">
+    <h2>Bienvenidos a Planet Youth Guanajuato</h2>
     <p>Esta página web ofrece información valiosa sobre los esfuerzos de Planet Youth en Guanajuato. Aquí, puedes explorar infografías detalladas y reportes de los hallazgos de la Encuesta Juventud y Bienestar 2023-2024 en Guanajuato.</p>
 
     <h2 style="text-align: left; margin-top: 40px;">Encuesta Juventud y Bienestar 2023-2024 en números</h2>
@@ -102,7 +109,7 @@
     </section>
 </div>
 
-<div class="content" style="padding: 30px 20px; max-width: 1000px; margin: 0 auto; margin-bottom: 40px">
+<div class="content" style="padding: 30px 20px; max-width: 1200px; margin: 0 auto; margin-bottom: 40px">
         <h2>Acerca de Planet Youth</h2>
         <p>Planet Youth se dedica a mejorar el bienestar de los jóvenes y a reducir el consumo de sustancias entre la juventud a nivel mundial. Nuestro enfoque incluye la participación comunitaria, estrategias basadas en datos y la colaboración con partes interesadas locales.</p>
         <a href="about.html" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #218abd; color: white; text-decoration: none; border-radius: 5px;">Aprende más</a>
