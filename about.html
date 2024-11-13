@@ -6,25 +6,26 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif; /* Change the font */
+            font-family: 'Arial', sans-serif;
         }
 
         .content p {
-            font-size: clamp(12px, 2vw, 20px); /* Adjust font size based on screen size */
+            font-size: clamp(14px, 2vw, 20px);
             line-height: 1.6;
         }
 
         .content h2, .content h3 {
-            font-size: clamp(20px, 3vw, 28px); /* Adjust font size of headings based on screen size */
+            font-size: clamp(20px, 3vw, 28px);
+        }
 
         .fullscreen-overlay {
-            display: none; /* Hide by default */
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            background: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -34,6 +35,80 @@
             max-width: 90%;
             max-height: 90%;
         }
+
+        .responsive-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .image-container {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        @media (max-width: 576px) {
+    .responsive-container {
+        flex-direction: column;
+    }
+
+    .image-container {
+        order: 2;
+    }
+
+    .responsive-container p {
+        order: 1;
+    }
+            }
+
+            .image-container {
+                margin-top: 10px;
+            }
+
+            .image-container img {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #summary-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .card {
+            flex: 0 0 30%;
+            background-color: #218abd;
+            color: white;
+            padding: 5px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #summary-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        .card p.large-text {
+            font-size: clamp(40px, 5vw, 60px);
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .card p.small-text {
+            font-size: clamp(16px, 3vw, 24px);
+            font-weight: bold;
+            margin: 5px 0;
         }
     </style>
     <title>Planet Youth en Guanajuato</title>
@@ -45,72 +120,28 @@
     <img src="logo_hvitt.png" alt="Logo" class="logo">
 </header>
 <div id="nav-placeholder"></div>
-<div class="content" style="padding: 80px 40px; max-width: 1000px; margin: 0 auto; ">
+
+
+<div class="content" style="padding: 80px 40px; max-width: 1000px; margin: 0 auto;">
     <section id="planet-youth-guanajuato">
-        <h2>Planet Youth en Guanajuato</h2>
-        <div class="responsive-container" style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+        <h3>Planet Youth en Guanajuato</h3>
+        <div class="responsive-container">
             <p style="flex: 1;">
                 El Gobierno del Estado de Guanajuato, a partir de octubre de 2019 y por iniciativa del Gobernador del Estado, el Lic. Diego Sinhue Rodríguez Vallejo, quien estableció como prioridad mejorar las condiciones de bienestar de las niñas, niños y jóvenes, fortaleció el Programa Estatal para la Prevención y Tratamiento de las Adicciones y promovió el Acuerdo de Colaboración Planet Youth-ISAPEG, refrendado el 27 de noviembre del mismo año. Este acuerdo se formalizó en el Convenio Marco de Colaboración Planet Youth-GOBIERNO DEL ESTADO-ISAPEG-MUNICIPIOS, estableciendo las bases para el trabajo colaborativo en 2020, inicialmente con 5 municipios, sumando 20 más en 2021 y 21 adicionales en 2022, abarcando así la totalidad de los 46 municipios del Estado.
             </p>
-            <div class="image-container" style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 10px;">
-                <img id="py-gto-logo" src="gto_logo.png" alt="PY gto logo" style="width: 200px; height: auto;">
-                <img id="py-gto-timeline" src="py_gto_timeline.png" alt="PY gto timeline" style="width: 200px; height: auto; ">
+            <div class="image-container">
+                <a href="#" onclick="openFullscreenOverlay('gto_logo.png')">
+                    <img id="py-gto-logo" src="gto_logo.png" alt="PY gto logo" style="width: 200px; height: auto;">
+                </a>
+                <a href="#" onclick="openFullscreenOverlay('py_gto_timeline.png')">
+                    <img id="py-gto-timeline" src="py_gto_timeline.png" alt="PY gto timeline" style="width: 200px; height: auto;">
+                </a>
             </div>
         </div>
     </section>
 
-    <style>
-        @media (max-width: 576px) { /* Target phone-sized screens */
-            .responsive-container {
-                flex-direction: column;
-            }
-
-            .image-container {
-                margin-top: 20px;
-            }
-
-            .image-container img {
-                width: 100%; /* Resize images to fit the container's width */
-                max-width: 300px; /* Optional: set a maximum width to prevent overly large images */
-                height: auto; /* Maintain aspect ratio */
-            }
-        }
-    </style>
-
-
     <h2 style="text-align: left; margin-top: 30px;">Encuesta Juventud y Bienestar 2020-2024 en números</h2>
-    <section id="summary-cards" style="display: flex; justify-content: space-between; gap: 20px; margin-top: 10px; margin-bottom: 40px;">
-        <style>
-            @media (max-width: 768px) {
-                #summary-cards {
-                    flex-direction: column;
-                    align-items: center;
-                }
-            }
-
-            /* Responsive font sizes */
-            .card p.large-text {
-                font-size: clamp(40px, 5vw, 60px); /* Increased the minimum size */
-                font-weight: bold;
-                margin: 5px 0; /* Adjust margin to control spacing */
-            }
-
-            .card p.small-text {
-                font-size: clamp(16px, 3vw, 24px); /* Increased the minimum size */
-                font-weight: bold;
-                margin: 5px 0; /* Adjust margin to control spacing */
-            }
-
-            .card {
-                flex: 0 0 30%; /* Adjust card width */
-                background-color: #218abd;
-                color: white;
-                padding: 5px; /* Reduced padding */
-                border-radius: 10px;
-                text-align: center;
-            }
-        </style>
-
+    <section id="summary-cards">
         <div class="card">
             <p class="large-text">46</p>
             <p class="small-text">Total de municipios</p>
@@ -125,42 +156,27 @@
         </div>
     </section>
 
-
-
-
-
     <hr>
+
     <section id="planet-youth">
         <h3>Acerca de Planet Youth</h3>
-        <div style="display: flex; gap: 20px; align-items: center;">
+        <div class="responsive-container">
             <p style="flex: 1;">
                 Planet Youth es una organización de asesoramiento y servicios dedicada a mejorar el bienestar de la juventud y reducir el consumo de sustancias entre los jóvenes a nivel global, colaborando con socios de Planet Youth para implementar el Programa de Asesoramiento de Planet Youth.
             </p>
-            <img src="logo.png" alt="About Planet Youth" style="width: 200px; height: auto;">
+            <div class="image-container">
+                <a href="#" onclick="openFullscreenOverlay('logo.png')">
+                    <img src="logo.png" alt="About Planet Youth" style="width: 200px; height: auto;">
+                </a>
+            </div>
         </div>
     </section>
-    <style>
-        @media (max-width: 576px) { /* Target phone-sized screens */
-            .responsive-container {
-                flex-direction: column;
-            }
 
-            .image-container {
-                margin-top: 20px;
-            }
-
-            .image-container img {
-                width: 100%; /* Resize images to fit the container's width */
-                max-width: 300px; /* Optional: set a maximum width to prevent overly large images */
-                height: auto; /* Maintain aspect ratio */
-            }
-        }
-    </style>
     <hr>
 
     <section id="planet-youth-guidance-program">
         <h3>El Programa de Asesoramiento de Planet Youth</h3>
-        <div >
+        <div class="responsive-container">
             <p style="flex: 1;">
                 El Programa de Asesoramiento de Planet Youth constituye una metodología de prevención universal y aguas arriba basada en el Modelo de Prevención Islandés (MPI). Es un enfoque integral, colaborativo y basado en datos, diseñado para reducir el consumo de sustancias en adolescentes y promover el bienestar juvenil. A través del Programa de Asesoramiento, Planet Youth apoya a cientos de unidades locales participantes en todo el mundo en el desarrollo de soluciones efectivas y locales para crear entornos saludables y fomentar el bienestar de sus jóvenes.
             </p>
@@ -169,11 +185,12 @@
             </p>
         </div>
     </section>
+
     <hr>
 
     <section id="ipm">
         <h3>Modelo de Prevención Islandés</h3>
-        <div >
+        <div class="responsive-container">
             <p style="flex: 1;">
                 En la década de 1990, Islandia enfrentaba importantes desafíos relacionados con el consumo de sustancias entre adolescentes, situándose entre los países con mayor consumo de alcohol, tabaco y drogas en Europa, según el Proyecto Europeo sobre Alcohol y Drogas en la Escuela (ESPAD). Durante muchos años, Islandia se basó en métodos tradicionales de prevención del consumo de sustancias, como programas individuales y escolares dirigidos a educar a los jóvenes sobre los riesgos del consumo de sustancias para disuadirlos de iniciarse.
             </p>
@@ -185,9 +202,14 @@
             </p>
         </div>
     </section>
-    <hr>
-
 </div>
+
+
+
+<div class="fullscreen-overlay" id="fullscreen-overlay">
+    <img id="fullscreen-image" src="" alt="Fullscreen">
+</div>
+
 <script>
     // Load the navigation menu from nav.html
     fetch('nav.html')
@@ -195,7 +217,6 @@
         .then(data => {
             document.getElementById('nav-placeholder').innerHTML = data;
 
-            // Add event listener for toggle button after loading navigation
             const menuToggle = document.getElementById('menu-toggle');
             const sideNav = document.getElementById('side-nav');
 
@@ -205,7 +226,6 @@
                 });
             }
 
-            // Highlight the active link after loading navigation
             const currentPath = window.location.pathname;
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
@@ -217,22 +237,18 @@
         .catch(error => {
             console.error('Error loading navigation:', error);
         });
-            // Close side navigation when clicking outside of it
-            document.addEventListener('click', (event) => {
-                const sideNav = document.getElementById('side-nav');
-                const menuToggle = document.getElementById('menu-toggle');
 
-                if (sideNav && sideNav.classList.contains('visible')) {
-                    if (!sideNav.contains(event.target) && event.target !== menuToggle) {
-                        sideNav.classList.remove('visible');
-                    }
-                }
-            });
-</script>
+    document.addEventListener('click', (event) => {
+        const sideNav = document.getElementById('side-nav');
+        const menuToggle = document.getElementById('menu-toggle');
 
-<div id="footer-placeholder"></div>
+        if (sideNav && sideNav.classList.contains('visible')) {
+            if (!sideNav.contains(event.target) && event.target !== menuToggle) {
+                sideNav.classList.remove('visible');
+            }
+        }
+    });
 
-<script>
     // Load the footer from footer.html
     fetch('footer.html')
         .then(response => response.text())
@@ -242,6 +258,18 @@
         .catch(error => {
             console.error('Error loading footer:', error);
         });
+
+    // Fullscreen overlay logic
+    function openFullscreenOverlay(imageSrc) {
+        const overlay = document.getElementById('fullscreen-overlay');
+        const fullscreenImage = document.getElementById('fullscreen-image');
+        fullscreenImage.src = imageSrc;
+        overlay.style.display = 'flex';
+    }
+
+    document.getElementById('fullscreen-overlay').addEventListener('click', function() {
+        this.style.display = 'none';
+    });
 </script>
 
 </body>
