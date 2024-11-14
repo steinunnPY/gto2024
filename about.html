@@ -19,6 +19,13 @@
             margin-right: 20px;
         }
 
+        /* Content and Slider Container */
+        .content, .slider {
+            max-width: 1000px; /* Adjust to your preferred width */
+            margin: 0 auto; /* Center the container */
+        }
+
+
         .content p {
             font-size: clamp(14px, 2vw, 20px);
             line-height: 1.6;
@@ -29,6 +36,19 @@
             font-size: clamp(20px, 3vw, 28px);
             text-align: left;
         }
+
+        .image-slider-section h2, .image-slider-section h3 {
+            font-size: clamp(20px, 3vw, 28px);
+            text-align: left;
+        }
+
+        .slider {
+            position: relative;
+            max-width: 1000px; /* Match this value with .content's max-width */
+            margin: 20px auto; /* Centers the slider */
+            overflow: hidden;
+        }
+
 
         .fullscreen-overlay {
             display: none;
@@ -44,8 +64,8 @@
         }
 
         .fullscreen-overlay img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 80%;
+            max-height: 80%;
         }
 
         .responsive-container {
@@ -68,6 +88,40 @@
             width: 100%;
             max-width: 200px;
             height: auto;
+        }
+
+        .large-image-container {
+            flex: 1 1 100%;
+            display: flex;
+            justify-content: center; /* Centering image */
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        .large-image-container img {
+            width: 80%;
+            max-width: 700px;
+            height: auto;
+            cursor: pointer; /* Ensures the image shows it's clickable */
+        }
+
+        @media (min-width: 1024px) {
+            .large-image-container img {
+                width: 700px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .large-image-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .large-image-container img {
+                width: 90%; /* Make it smaller for smaller screens */
+                max-width: 100%; /* Ensure it fits within the screen width */
+                margin: 0 auto;
+            }
         }
 
         .card {
@@ -102,6 +156,47 @@
             margin: 5px 0;
             text-align: center;
         }
+
+        .slider {
+            position: relative;
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .slider img {
+            max-width: 1000px;
+            width: 80%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-container img {
+            flex: 0 0 100%;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
 
         @media (max-width: 768px) {
             .logo {
@@ -156,7 +251,7 @@
 <header class="top-banner" style="background: linear-gradient(to bottom, #218abd 0%, #95cee8 100%); padding: 20px; position: fixed; top: 0; width: 100%; z-index: 1200;">
     <div style="display: flex; align-items: center; justify-content: space-between;">
         <div class="menu-toggle" id="menu-toggle" style="font-size: 30px; color: white; cursor: pointer;">☰</div>
-        <h1 class="website-title" style="margin: 0; color: white;">Arceca de</h1>
+        <h1 class="website-title" style="margin: 0; color: white;">Acerca de</h1>
         <img src="images/logo_hvitt.png" alt="Logo" class="logo" style = margin-right: 20px;>
     </div>
 </header>
@@ -172,10 +267,10 @@
                     El Gobierno del Estado de Guanajuato, a partir de octubre de 2019 y por iniciativa del Gobernador del Estado, el Lic. Diego Sinhue Rodríguez Vallejo, quien estableció como prioridad mejorar las condiciones de bienestar de las niñas, niños y jóvenes, fortalecó el Programa Estatal para la Prevención y Tratamiento de las Adicciones y promovió el Acuerdo de Colaboración Planet Youth-ISAPEG, refrendado el 27 de noviembre del mismo año. Este acuerdo se formalizó en el Convenio Marco de Colaboración Planet Youth-GOBIERNO DEL ESTADO-ISAPEG-MUNICIPIOS, estableciendo las bases para el trabajo colaborativo en 2020, inicialmente con 5 municipios, sumando 20 más en 2021 y 21 adicionales en 2022, abarcando así la totalidad de los 46 municipios del Estado.
                 </p>
                 <div class="image-container">
-                    <a href="#" onclick="openFullscreenOverlay('gto_logo.png')">
+                    <a href="#" onclick="openFullscreenOverlay('images/gto_logo.png')">
                         <img id="py-gto-logo" src="images/gto_logo.png" alt="PY gto logo" style="width: 200px; height: auto; ">
                     </a>
-                    <a href="#" onclick="openFullscreenOverlay('py_gto_timeline.png')">
+                    <a href="#" onclick="openFullscreenOverlay('images/py_gto_timeline.png')">
                         <img id="py-gto-timeline" src="images/py_gto_timeline.png" alt="PY gto timeline" style="width: 200px; height: auto;">
                     </a>
                 </div>
@@ -209,7 +304,7 @@
                     Planet Youth es una organización de asesoramiento y servicios dedicada a mejorar el bienestar de la juventud y reducir el consumo de sustancias entre los jóvenes a nivel global, colaborando con socios de Planet Youth para implementar el Programa de Asesoramiento de Planet Youth.
                 </p>
                 <div class="image-container">
-                    <a href="#" onclick="openFullscreenOverlay('logo.png')">
+                    <a href="#" onclick="openFullscreenOverlay('images/logo.png')">
                         <img src="images/logo.png" alt="About Planet Youth" class = "logo" style="width: 150px; height: auto;">
                     </a>
                 </div>
@@ -227,6 +322,9 @@
                 <p style="text-align: justify;">
                     Adaptable a diferentes contextos culturales y locales, el programa busca ayudar a cada unidad local a lograr cambios significativos y duraderos para el bienestar general de la juventud. Los datos se recopilan bienalmente mediante el cuestionario básico de Planet Youth para identificar factores locales de riesgo y protección, y los resultados se utilizan para diseñar intervenciones y acciones relevantes para las necesidades actuales de los adolescentes en cada unidad local participante.
                 </p>
+
+
+
             </div>
         </section>
 
@@ -244,9 +342,37 @@
                 <p style="text-align: justify;">
                     Como resultado de la implementación de este modelo, Islandia ahora se encuentra entre los países con menor consumo de sustancias entre adolescentes en Europa.
                 </p>
+                <div class="large-image-container">
+                    <a href="#" onclick="openFullscreenOverlay('images/trendy_23.png')">
+                        <img src="images/trendy_23.png" alt="IPM trendy">
+                    </a>
+                </div>
+
             </div>
         </section>
     </div>
+
+
+
+    <section id="image-slider-section" style ="background-color: #f0f0f0; padding: 20px 0; width: 100vw; position: relative; ">
+        <h3 style="padding: 20px; font-size: clamp(20px, 3vw, 28px);max-width: 1000px; margin-bottom: 0px; margin: 0 auto;">Más información sobre el Modelo de Prevención Islandés</h3>
+
+        <div class="slider">
+            <p>
+                Haz clic en las flechas para recorrer las imágenes.
+            </p>
+            <div style="text-align: left; margin-top: 0px; margin-bottom: 30px" class="slider-container" id="slider-container">
+                <img src="images/now_then.png" alt="Image 2" onclick="openFullscreenOverlay('images/now_then.png')">
+                <img src="images/domains.png" alt="domains" onclick="openFullscreenOverlay('images/domains.png')">
+                <img src="images/5principles.png" alt="Image 3" onclick="openFullscreenOverlay('images/5principles.png')">
+                <img src="images/10steps.png" alt="Image 4" onclick="openFullscreenOverlay('images/10steps.png')">
+            </div>
+            <div class="slider-nav">
+                <button id="prev-slide">❮</button>
+                <button id="next-slide">❯</button>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -312,10 +438,30 @@
             const fullscreenImage = document.getElementById('fullscreen-image');
             fullscreenImage.src = imageSrc;
             overlay.style.display = 'flex';
+
+            // Ensures image is resized within screen bounds
+            fullscreenImage.style.maxWidth = '70%';
+            fullscreenImage.style.maxHeight = '70%';
         }
 
         document.getElementById('fullscreen-overlay').addEventListener('click', function() {
             this.style.display = 'none';
+        });
+
+
+                // Slider logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-container img');
+        const sliderContainer = document.getElementById('slider-container');
+
+        document.getElementById('next-slide').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        });
+
+        document.getElementById('prev-slide').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
         });
     </script>
 </div>
