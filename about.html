@@ -96,6 +96,7 @@
             justify-content: center; /* Centering image */
             margin-top: 20px;
             align-items: center;
+            order: 2; /* ensures the image stays below the text*/
         }
 
         .large-image-container img {
@@ -113,7 +114,7 @@
 
         @media (max-width: 768px) {
             .large-image-container {
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
             }
 
