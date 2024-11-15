@@ -196,13 +196,13 @@ p {
 }
 
 .infographic-button img,
-.report-button img {
+.report-page-button img {
     max-width: 300px;
     height: auto;
     margin-top: 20px;
 }
 
-.report-button {
+.report-page-button {
     cursor: pointer;
     margin-top: 10px;
 }
