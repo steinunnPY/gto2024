@@ -3,84 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="scripts/styles.min.css">
+    <script defer src="scripts/main.min.js"></script>
+    <link rel="preload" href="images/gto_home_banner.webp" as="image">
     <style>
-        body {
-            font-family: 'Arial', sans-serif; /* Change the font */
+        :root {
+            --content-padding: 30px; /* Specific padding for the home page */
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+         :root {
+            --menu-toggle-bg: rgba(0, 0, 0, 0.5); /* Background color for the home page */
         }
-
-        .content p {
-            font-size: clamp(16px, 2vw, 20px); /* Adjust font size based on screen size */
-            line-height: 1.6;
-            text-align: justify;
-        }
-
-   .card {
-            flex: 1;
-            background-color: #218abd;
-            color: white;
-            padding: 5px;
-            border-radius: 10px;
-            text-align: center;
-            width: 70%;
-            box-sizing: border-box;
-        }
-
-        #summary-cards {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 10px;
-            margin-bottom: 40px;
-        }
-
-        .card p.large-text {
-            font-size: clamp(20px, 5vw, 60px);
-            font-weight: bold;
-            margin: 5px 0;
-            text-align: center;
-        }
-
-        .card p.small-text {
-            font-size: clamp(14px, 3vw, 24px);
-            font-weight: bold;
-            margin: 5px 0;
-            text-align: center;
-        }
-
-
-        .content h2, .content h3 {
-            font-size: clamp(20px, 3vw, 28px); /* Adjust font size of headings based on screen size */
-        }
-
-        .banner-image {
-            width: 100%;
-            height: auto;
-            max-height: 600px; /* Set a max height to avoid the banner becoming too large */
-            object-fit: cover; /* Ensure the entire banner is visible and fits the space */
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            #summary-cards {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .card {
-                width: 70%;
-            }
-
-
-        }
-
     </style>
     <title>Planet Youth en Guanajuato</title>
 </head>
@@ -88,122 +20,60 @@
 <body>
 <div id="nav-placeholder"></div>
 
-<div style="position: relative;">
+<div class="banner-container">
     <picture>
-        <source media="(max-width: 576px)" srcset="images//phone_gto_home_banner.png">
-        <img src="images/gto_home_banner.png" alt="Banner Image" class="banner-image" style="display: block; width: 100%; height: auto;">
+        <source media="(max-width: 576px)" srcset="images/phone_gto_home_banner.webp">
+        <img src="images/gto_home_banner.webp" alt="Banner Image" class="banner-image" loading="lazy">
     </picture>
-    <div class="menu-toggle" id="menu-toggle" style="position: absolute; top: 20px; left: 20px; font-size: 30px; color: white; cursor: pointer; background: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 5px;">☰</div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
 </div>
 
-<div class="content" style="padding: 30px 20px; max-width: 1200px; margin: 0 auto;">
-    <h2>Bienvenidos a Planet Youth Guanajuato</h2>
-    <p style = "margin-bottom: 40px;">Esta página web ofrece información valiosa sobre los esfuerzos de Planet Youth en Guanajuato. Aquí, puedes explorar infografías detalladas y reportes de los hallazgos de la Encuesta Juventud y Bienestar 2023-2024 en Guanajuato.</p>
+<div class="content">
+    <h3>Bienvenidos a Planet Youth Guanajuato</h3>
+    <p>Esta página web ofrece información valiosa sobre los esfuerzos de Planet Youth en Guanajuato. Aquí, puedes explorar infografías detalladas y reportes de los hallazgos de la Encuesta Juventud y Bienestar 2023-2024 en Guanajuato.</p>
 
     <hr>
 
-    <h2 style="text-align: left; margin-top: 40px;margin-bottom: 30px">Encuesta Juventud y Bienestar 2023-2024 en números</h2>
-    <section id="summary-cards" style="display: flex; justify-content: space-between; gap: 20px; margin-top: 10px; margin-bottom: 40px">
-
-
-        <div class="card" style="flex: 1; background: #3fa7d6; color: white; padding: 20px; border-radius: 10px; text-align: center;">
-            <p style="font-size: 50px; font-weight: bold; text-align: center">46</p>
-            <p style="font-size: 20px; font-weight: bold; text-align: center">Total de municipios</p>
+    <h2>Encuesta Juventud y Bienestar 2023-2024 en números</h2>
+    <section id="summary-cards">
+        <div class="card">
+            <p class="large-text">46</p>
+            <p class="small-text">Total de municipios</p>
         </div>
-        <div class="card" style="flex: 1; background: #3fa7d6; color: white; padding: 20px; border-radius: 10px; text-align: center;">
-            <p style="font-size: 50px; font-weight: bold; text-align: center ">1623</p>
-            <p style="font-size: 20px; font-weight: bold;text-align: center ">Total de escuelas</p>
+        <div class="card">
+            <p class="large-text">1623</p>
+            <p class="small-text">Total de escuelas</p>
         </div>
-        <div class="card" style="flex: 1;  background: #3fa7d6; color: white; padding: 20px; border-radius: 10px; text-align: center;">
-            <p style="font-size: 50px; font-weight: bold; text-align: center">86,337</p>
-            <p style="font-size: 20px; font-weight: bold; text-align: center">Respuestas totales</p>
+        <div class="card">
+            <p class="large-text">86,337</p>
+            <p class="small-text">Respuestas totales</p>
         </div>
     </section>
 
-
-
-    <section id="infographic-buttons" style="margin-top: 40px; text-align: center; background-color: #f0f0f0; padding: 20px 0; width: 100vw; position: relative; left: 50%; transform: translateX(-50%);">
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 90px; margin-top: 10px;">
-
-            <div style="cursor: pointer;">
-                <h3>Explorar infografías</h3>
-                <a href="infographics.html">
-                    <img src="images/infographic_button.png" alt="infographic button" style="width: 300px; height: auto; margin-top: 20px">
-                </a>
-
-            </div>
-            <div style="cursor: pointer;">
-                <h3>Explorar informes</h3>
-                <a href="reports.html">
-                    <img src="images/gto_report.png" alt="Explore Reports" style="width: 400px; height: auto; margin-top: 20px">
-                </a>
-
-            </div>
+    <section id="infographic-buttons">
+        <div class="infographic-button">
+            <h3>Explorar infografías</h3>
+            <a href="infographics.html">
+                <img src="images/infographic_button.webp" alt="infographic button" loading="lazy">
+            </a>
+        </div>
+        <div class="report-button">
+            <h3>Explorar informes</h3>
+            <a href="reports.html">
+                <img src="images/gto_report.webp" style = "width:400px" alt="Explore Reports" loading="lazy">
+            </a>
         </div>
     </section>
 </div>
 
-<div class="content" style="padding: 40px 20px; max-width: 1200px; margin: 0 auto; margin-bottom: 40px">
-        <h2>Acerca de Planet Youth</h2>
-        <p>Planet Youth se dedica a mejorar el bienestar de los jóvenes y a reducir el consumo de sustancias entre la juventud a nivel mundial. Nuestro enfoque incluye la participación comunitaria, estrategias basadas en datos y la colaboración con partes interesadas locales.</p>
-        <a href="about.html" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #3fa7d6; color: white; text-decoration: none; border-radius: 5px;">Aprende más</a>
-    </section>
+<div class="content">
+    <h2>Acerca de Planet Youth</h2>
+    <p>Planet Youth se dedica a mejorar el bienestar de los jóvenes y a reducir el consumo de sustancias entre la juventud a nivel mundial. Nuestro enfoque incluye la participación comunitaria, estrategias basadas en datos y la colaboración con partes interesadas locales.</p>
+    <a href="about.html" class="learn-more-button">Aprende más</a>
 </div>
 
 <div id="footer-placeholder"></div>
 
-<script>
-    // Load the navigation menu from nav.html
-    fetch('nav.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('nav-placeholder').innerHTML = data;
-
-            // Add event listener for toggle button after loading navigation
-            const menuToggle = document.getElementById('menu-toggle');
-            const sideNav = document.getElementById('side-nav');
-
-            if (menuToggle && sideNav) {
-                menuToggle.addEventListener('click', () => {
-                    sideNav.classList.toggle('visible');
-                });
-            }
-
-            // Highlight the active link after loading navigation
-            const currentPath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                if (link.pathname === currentPath) {
-                    link.classList.add('active');
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error loading navigation:', error);
-        });
-
-    // Close side navigation when clicking outside of it
-    document.addEventListener('click', (event) => {
-        const sideNav = document.getElementById('side-nav');
-        const menuToggle = document.getElementById('menu-toggle');
-
-        if (sideNav && sideNav.classList.contains('visible')) {
-            if (!sideNav.contains(event.target) && event.target !== menuToggle) {
-                sideNav.classList.remove('visible');
-            }
-        }
-    });
-
-    // Load the footer from footer.html
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(error => {
-            console.error('Error loading footer:', error);
-        });
-</script>
-
+<script defer src="scripts/main.min.js"></script>
 </body>
 </html>

@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scripts/styles.min.css">
-    <title>Informes 2023-2024</title>
-
-</head>
-
-
-<body>
-<header class="top-banner" style="background: linear-gradient(3deg, rgba(16,53,107,1) 1%, rgba(63,167,214,1) 48%, rgba(149,206,232,1) 100%); padding: 20px; position: fixed; top: 0; width: 100%; z-index: 1200; display: flex; align-items: center; justify-content: space-between; height: 60px;">
-    <div class="menu-toggle" id="menu-toggle" style="font-size: 30px; color: white; cursor: pointer;">☰</div>
-    <h1 class="website-title" style="margin: 0; color: white; position: absolute; left: 50%; transform: translateX(-50%);">Informes</h1>
-    <img src="images/logo_hvitt.webp" alt="Logo" class="banner-logo" style="margin-left: auto;">
-</header>
-
-
-<div class="nav-placeholder-container">
-    <div id="nav-placeholder"></div>
-</div>
-
-
-    <div class="content" >
-        <h1>Resultados de Guanajuato 2023-2024</h1>
-        <p>El siguiente informe incluye resultados agregados de 2023 y 2024, mostrando los resultados para los 46 municipios de Guanajuato.</p>
-        <p>Para una mejor visualización en móviles, haga clic aquí para ver o descargar el informe </p>
-        <a href="reports/Guanajuato%202023-2024.pdf" class="report-button" >Informe</a>
-
-        <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; /* Aspect ratio: 16:9 */">
-            <iframe
-                    src="reports/Guanajuato%202023-2024.pdf" style="position: absolute; top: 0; left: 0; width: 100%; height: 105%; border: none;">
-            </iframe>
-        </div>
-
-
-    </div>
-
-    <div style="height: 100px;"></div> <!-- Spacer div -->
-
-</div>
-
-<div id="footer-placeholder"></div>
-
-
-<script>
+document.addEventListener('DOMContentLoaded', () => {
     // Load the navigation menu from nav.html
     fetch('nav.html')
         .then(response => response.text())
@@ -86,6 +40,23 @@
         }
     });
 
+
+    // Fullscreen image functionality
+    const infographics = document.querySelectorAll('.infographic');
+    const fullscreenOverlay = document.getElementById('fullscreen-overlay');
+    const fullscreenImage = document.getElementById('fullscreen-image');
+
+    infographics.forEach(img => {
+        img.addEventListener('click', () => {
+            fullscreenImage.src = img.src;
+            fullscreenOverlay.style.display = 'flex';
+        });
+    });
+
+    fullscreenOverlay.addEventListener('click', () => {
+        fullscreenOverlay.style.display = 'none';
+    });
+
     // Load the footer from footer.html
     fetch('footer.html')
         .then(response => response.text())
@@ -95,7 +66,4 @@
         .catch(error => {
             console.error('Error loading footer:', error);
         });
-</script>
-
-</body>
-</html>
+});

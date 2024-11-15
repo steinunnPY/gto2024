@@ -1,0 +1,505 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Bar Styles */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #218abd 0%, #95cee8 100%);
+    padding: 10px;
+    z-index: 1000;
+    border-bottom: 0.7px solid #ddd;
+}
+
+/* Website Title */
+.website-title {
+    font-size: clamp(18px, 3vw, 40px);
+    color: white;
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+
+/* Logo Styles */
+.banner-logo {
+    width: 20vw;
+    max-width: 120px;
+    min-width: 30px;
+    padding-right: 5%;
+}
+
+/* Container for Banner */
+.banner-container {
+    position: relative;
+}
+
+/* Side Navigation Styles */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 2000;
+}
+
+/* Visible State for Side Navigation */
+.side-nav.visible {
+    transform: translateX(0);
+}
+
+/* Navigation Logo */
+.nav-logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 15vw;
+    max-width: 150px;
+    min-width: 30px;
+}
+
+/* Offcanvas Navigation Link Styles */
+.offcanvas-nav .nav-link {
+    color: #6c757d; /* Unselected link text color */
+    border-radius: 0.25rem;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.offcanvas-nav .nav-link.active {
+    background-color: #3fa7d6; /* Active link background */
+    color: white; /* Active link text color */
+}
+
+.offcanvas-nav .nav-link:hover {
+    color: #000; /* Hover text color */
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background: var(--menu-toggle-bg, rgba(0, 0, 0, 0));
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Banner Image Styling */
+.banner-image {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Content Container */
+.content {
+    padding: var(--content-padding, 150px) 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 0;
+}
+
+/* Headings Styling */
+h2, h3 {
+    font-size: clamp(20px, 3vw, 28px);
+    margin-top: 10px;
+}
+
+/* Horizontal Rule Styling */
+hr {
+    margin: 20px 0;
+}
+
+/* Paragraph Styles */
+p {
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+/* Summary Cards Section */
+#summary-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+/* Card Styling */
+.card {
+    flex: 1;
+    background-color: #3fa7d6;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Text Styles */
+.large-text {
+    font-size: clamp(20px, 5vw, 60px);
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.small-text {
+    font-size: clamp(14px, 3vw, 24px);
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Infographic Buttons Section */
+#infographic-buttons {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 40px 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 90px;
+}
+
+/* Infographic Button Styles */
+.infographic-button {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.infographic-button img,
+.report-button img {
+    max-width: 300px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.report-button {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Learn More Button */
+.learn-more-button {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 10px 20px;
+    background-color: #3fa7d6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* About Page Images */
+.about-small-img {
+    max-width: 150px;
+    height: auto;
+    margin: 10px auto;
+    margin-top: -10px;
+    display: block !important;
+}
+
+.about-img {
+    width: 80%;
+    max-width: 900px;
+    height: auto;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+
+.image-container {
+    flex: 0 1 auto;  /* Prevent shrinking */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;       /* Add spacing between images */
+    align-self: flex-start; /* Align container to the top of the text */
+    margin-top: -10;
+}
+
+/* Text should take up as much space as possible */
+.responsive-text {
+    flex: 1;   /* Makes text container grow to fill available space */
+}
+
+
+
+.responsive-container {
+    display: flex;
+    flex-direction: row;  /* Place text and image side by side */
+    align-items: flex-start;
+    gap: 20px;
+}
+
+
+.large-image-container {
+    margin: 0; /* Ensure no extra margin */
+    padding: 0; /* Ensure no extra padding */
+    overflow: hidden; /* This can help shrink extra content that overflows */
+
+}
+
+#ipm {
+    margin-top: 10px; /* Adjust the top margin if needed */
+    margin-bottom: -110px; /* Adjust the bottom margin if needed */
+    padding: 10px; /* Adjust padding inside the section */
+}
+
+
+/* Image Slider on About Page - Updated to Match Page Styles */
+.slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 10px auto;
+    overflow: hidden;
+
+}
+
+.slider img {
+    max-width: 1000px;
+    width: 70%;
+    height: auto;
+    cursor: pointer;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-container img {
+    flex: 0 0 100%;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-nav button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.infographic-gallery {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.infographic-container {
+    position: relative;
+}
+
+.infographic {
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.infographic:hover {
+    transform: scale(1.05);
+}
+
+.fullscreen-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+
+
+/* Learn More Button */
+.report-button {
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    padding: 10px 20px;
+    background-color: #3fa7d6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .banner-logo {
+        width: 80px;
+    }
+
+    .website-title h1 {
+        font-size: 40px;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 25px;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    #summary-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 70%;
+    }
+
+    #infographic-buttons {
+        flex-direction: column;
+    }
+
+    .responsive-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .image-container {
+        align-items: center; /* Ensure images are centered */
+        margin: 0 auto;
+    }
+
+    .about-img {
+        width: 90%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+     /* Image Slider Section Heading Adjustment */
+        /* Slider Container for Smaller Screens */
+        .slider {
+            max-width: 90%; /* Ensure slider does not exceed screen width */
+            margin: 10px auto; /* Reduce margin for smaller screens */
+            overflow: hidden;
+        }
+
+        .slider img {
+            max-width: 100%; /* Make images responsive */
+            width: 650; /* Adjust width to fit the screen better */
+            height: auto; /* Maintain aspect ratio */
+            margin: 0 auto; /* Center images */
+        }
+        .slider-nav {
+            position: absolute;
+            top: 60%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .infographic-gallery {
+         grid-template-columns: repeat(2, 1fr);
+
+
+
+}
+
+@media (max-width: 560px) {
+
+    .banner-logo {
+        width: 70px;
+    }
+
+    .top-bar h1 {
+        font-size: 30px;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 25px;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    .slider h3 {
+        font-size: 20px;
+    }
+
+     .infographic-gallery {
+        grid-template-columns: 1fr;}
+}
+
+@media (max-width: 480px) {
+    .banner-logo {
+        width: 70px;
+    }
+
+    .top-bar h1 {
+        font-size: 25px;
+    }
+
+        .menu-toggle {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+
+}
